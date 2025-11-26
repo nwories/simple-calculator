@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+    <!-- link tailwind css -->
+    <link rel="stylesheet" href="style/output.css" />
+  </head>
+  <body class="bg-[#333333] flex justify-center items-center">
+    <!-- calculator container -->
+    <div class="container bg-[#d7d8d3] w-full h-full px-2.5 py-15 rounded-4xl md:w-[29em] md:py-1">
+      <!-- screen container -->
+      <div
+        class="calculator h-60 md:h-45 bg-[#5d6164] w-full mt-3 border border-[#5d6164] rounded-2xl p-4 my-6 md:my-3"
+      >
+        <!-- screen -->
+        <input
+          class="px-3 h-45 md:h-30 w-full bg-[#d5e3e4] border border-[#d5e3e4] rounded-2xl display text-7xl text-end" type="text" disabled
+          ></input>
+          <div class=" tracking-widest text-center pt-2 text-white opacity-30">Ifeanyichukwu Stephen Nworie</div>
+      </div>
+      <!-- switch btn and clock -->
+      <!-- switch -->
+      <div
+        class="px-3 h-20 w-full bg-[#b5b9bc] my-4 md:my-0 border border-[#d5e3e4] rounded-2xl flex items-center justify-between"
+      >
+        <button
+          class="switch bg-[#5d6164] w-30 flex rounded items-center p-1 text-2xl"
+        >
+          <span class="switch-on check bg-red-500 rounded p-2 px-3 relative left-12 grid text-white font-bold"
+            >ON</span
+          >
+          <span class="switch-off rounded bg-red-500 p-2 ml-1 hidden text-white font-bold">OFF</span>
+        </button>
+        <!-- clock -->
+        <div class="clock-container flex items-center">
+          <div class="mx-2 text-2xl text-[#6c6964] time">time</div>
+          <div class="font-mono w-30 rounded h-13 bg-[#595554] display-time text-center pt-2 text-2xl opacity-80"></div>
+        </div>
+      </div>
+      <!-- calculator buttons -->
+      <!-- first three button rows -->
+      <div class="mt-6 md:mt-3">
+        <!-- 1st row btn -->
+        <div
+          class="btn-row-container flex justify-between text-4xl font-bold text-white mb-7 md:mb-4"
+        >
+          <button
+            class="bg-[#f07f29] rounded-2xl w-[2.5em] h-[2.5em] shadow-lg shadow-[#555555] clear"
+          >
+            AC
+          </button>
+          <button
+            class="bg-[#889095] rounded-2xl w-[2.5em] h-[2.5em] shadow-lg shadow-[rgb(85,85,85)] delete"
+          >
+            DE
+          </button>
+          <button
+            class="bg-[#889095] rounded-2xl w-[2.5em] h-[2.5em] shadow-lg shadow-[#555555]" onclick="insertData(`/`)"
+          >
+            &divide;
+          </button>
+          <button
+            class="bg-[#889095] rounded-2xl w-[2.5em] h-[2.5em] shadow-lg shadow-[#555555]" onclick="insertData(`+`)"
+          >
+            +
+          </button>
+        </div>
+        <!-- 2nd row btn -->
+        <div
+          class="btn-row-container flex justify-between text-4xl font-bold text-[#6c6964] mt-3 mb-7 md:mb-4"
+        >
+          <button
+            class="bg-[#f4f3ef] rounded-2xl w-[2.5em] h-[2.5em] shadow-lg shadow-[#555555]" onclick="insertData(7)"
+          >
+            7
+          </button>
+          <button
+            class="bg-[#f4f3ef] rounded-2xl w-[2.5em] h-[2.5em] shadow-lg shadow-[#555555] number-btn" onclick="insertData(8)"
+          >
+            8
+          </button>
+          <button
+            class="bg-[#f4f3ef] rounded-2xl w-[2.5em] h-[2.5em] shadow-lg shadow-[#555555] number-btn" onclick="insertData(9)"
+          >
+            9
+          </button>
+          <button
+            class="bg-[#889095] text-white rounded-2xl w-[2.5em] h-[2.5em] shadow-lg shadow-[#555555] number-btn"  onclick="insertData(`-`)"
+          >
+            &minus;
+          </button>
+        </div>
+        <!-- 3rd row btn -->
+        <div
+          class="btn-row-container flex justify-between text-4xl font-bold text-[#6c6964] mt-3 mb-7 md:mb-2"
+        >
+          <button
+            class="bg-[#f4f3ef] rounded-2xl w-[2.5em] h-[2.5em] shadow-lg shadow-[#555555]" onclick="insertData(4)"
+          >
+            4
+          </button>
+          <button
+            class="bg-[#f4f3ef] rounded-2xl w-[2.5em] h-[2.5em] shadow-lg shadow-[#555555]" onclick="insertData(5)"
+          >
+            5
+          </button>
+          <button
+            class="bg-[#f4f3ef] rounded-2xl w-[2.5em] h-[2.5em] shadow-lg shadow-[#555555]" onclick="insertData(6)"
+          >
+            6
+          </button>
+          <button
+            class="bg-[#889095] text-white rounded-2xl w-[2.5em] h-[2.5em] shadow-lg shadow-[#555555]" onclick="insertData(`*`)"
+          >
+            &times;
+          </button>
+        </div>
+      </div>
+      <!-- last two button rows -->
+      <div class="flex gap-4">
+        <div class=" w-9/12">
+          <!-- 4th row btn -->
+        <div
+          class="btn-row-container flex justify-between text-4xl font-bold text-[#6c6964] mt-3 mb-7 md:mb-4"
+        >
+          <button
+            class="bg-[#f4f3ef] rounded-2xl w-[2.5em] h-[2.5em] shadow-lg shadow-[#555555]" onclick="insertData(1)"
+          >
+            1
+          </button>
+          <button
+            class="bg-[#f4f3ef] rounded-2xl w-[2.5em] h-[2.5em] shadow-lg shadow-[#555555]" onclick="insertData(2)"
+          >
+            2
+          </button>
+          <button
+            class="bg-[#f4f3ef] rounded-2xl w-[2.5em] h-[2.5em] shadow-lg shadow-[#555555]" onclick="insertData(3)"
+          >
+            3
+          </button>
+          
+        </div>
+        <!-- last row btn -->
+        <div
+          class="btn-row-container flex justify-between text-4xl font-bold text-[#6c6964] mt-3 md:mb-4"
+        >
+          <!-- zero btn -->
+          <div class="zero w-3/5">
+            <button
+            class="bg-[#f4f3ef] rounded-2xl w-[5.8em] h-[2.5em] shadow-lg shadow-[#555555]" onclick="insertData(0)"
+          >
+            0
+          </button>
+          </div>
+          <button
+            class="bg-[#f4f3ef] text-6xl pt-5 font-bold rounded-2xl w-[1.5em] h-[1.5em] shadow-lg shadow-[#555555]" onclick="insertData(`.`)"
+          >
+            &dot;
+          </button>
+        </div>
+        </div>
+        <div class="equal-btn pt-3 w-3/12 flex justify-end">
+          <button
+            class="bg-[#f07f29] text-4xl font-bold text-white rounded-2xl w-[2.5em] h-full shadow-lg shadow-[#555555] equal-btn md:h-[5.5em]"
+          >
+            =
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- link javascript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

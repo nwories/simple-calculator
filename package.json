@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "build:css": "postcss style/style.css -o style/output.css",
+    "watch": "postcss style/style.css -o style/output.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.17"
+  }
+}
