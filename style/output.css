@@ -358,6 +358,9 @@
   .w-\[3\.8em\] {
     width: 3.8em;
   }
+  .w-\[3\.9em\] {
+    width: 3.9em;
+  }
   .w-\[4\.5em\] {
     width: 4.5em;
   }
@@ -490,6 +493,9 @@
   }
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
+  }
+  .pt-10 {
+    padding-top: calc(var(--spacing) * 10);
   }
   .pt-\[0\.1em\] {
     padding-top: 0.1em;
@@ -689,6 +695,11 @@
   .md\:pt-2 {
     @media (width >= 48rem) {
       padding-top: calc(var(--spacing) * 2);
+    }
+  }
+  .md\:pt-5 {
+    @media (width >= 48rem) {
+      padding-top: calc(var(--spacing) * 5);
     }
   }
   .md\:pb-0 {
